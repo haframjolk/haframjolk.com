@@ -1,10 +1,45 @@
 @use 'sass:map';
 
+$font-size: 18px;
+$header-image: url('assets/img/cover.jpg');
+
 $sizes: (
   'md': 576px,
   'lg': 768px,
   'xl': 960px,
 );
+
+$fonts: (
+  'main': ('Open Sans', sans-serif),
+  'h1': ('Righteous', cursive),
+  'heading': ('Varela Round', sans-serif),
+);
+
+$font-weight: (
+  'h1': 400,
+  'heading': 400,
+);
+
+$colors: (
+  'h1': #fff,
+  'main': #474747,
+  'link': #f2777a,
+  'link-hover': #9c9,
+  'overlay': rgba(0, 0, 0, 0.2),
+  'footer': #fff,
+  'footer-lower': #666,
+  'social-icon-bg': #999,
+);
+
+@mixin overlay($opacity) {
+  background-color: rgba(0, 0, 0, $opacity);
+  bottom: 0;
+  content: '';
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
 
 @mixin media($size) {
   @media (min-width: map.get($sizes, $size)) {

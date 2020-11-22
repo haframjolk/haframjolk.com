@@ -1,3 +1,6 @@
+@use 'sass:map';
+@use 'config';
+
 .social {
   align-items: center;
   display: flex;
@@ -6,7 +9,7 @@
   padding: 0;
 
   &__icon {
-    background-color: #999;
+    background-color: map.get(config.$colors, 'social-icon-bg');
     border-radius: 5px;
     cursor: pointer;
     display: block;
@@ -18,7 +21,7 @@
   }
 
   &__icon:hover {
-    background-color: #666;
+    background-color: darken(map.get(config.$colors, 'social-icon-bg'), 20%);
   }
 
   &__icon:last-of-type {

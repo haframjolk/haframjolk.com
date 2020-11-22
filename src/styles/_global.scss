@@ -1,3 +1,6 @@
+@use 'sass:map';
+@use 'config';
+
 html {
   box-sizing: border-box;
 }
@@ -9,25 +12,27 @@ html {
 }
 
 body {
-  color: #474747;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
+  color: map.get(config.$colors, 'main');
+  font-family: map.get(config.$fonts, 'main');
+  font-size: config.$font-size;
   line-height: 2;
   margin: 0;
 }
 
 a {
-  color: #f2777a;
+  color: map.get(config.$colors, 'link');
   text-decoration: none;
   transition: color 0.2s ease;
 
   &:hover {
-    color: #9c9;
+    color: map.get(config.$colors, 'link-hover');
   }
 }
 
 h1 {
-  font-family: 'Righteous', cursive;
+  color: map.get(config.$colors, 'h1');
+  font-family: map.get(config.$fonts, 'h1');
+  font-weight: map.get(config.$font-weight, 'h1');
 }
 
 p {
@@ -39,6 +44,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Varela Round', sans-serif;
-  font-weight: 400;
+  font-family: map.get(config.$fonts, 'heading');
+  font-weight: map.get(config.$font-weight, 'heading');
 }
