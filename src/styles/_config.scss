@@ -3,6 +3,7 @@
 $sizes: (
   'md': 576px,
   'lg': 768px,
+  'xl': 960px,
 );
 
 @mixin media($size) {

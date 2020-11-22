@@ -1,3 +1,5 @@
+@use 'config';
+
 .container {
   margin: 0 auto;
   max-width: 1280px;
@@ -12,7 +14,7 @@
   background-image: url('assets/img/cover.jpg');
   background-position: center center;
   background-size: cover;
-  padding: 15em 0;
+  padding: 15em 1em;
   position: relative;
   text-align: center;
   z-index: 0;
@@ -30,10 +32,14 @@
 
   h1 {
     color: #fff;
-    font-size: 9em;
+    font-size: 4em;
     font-weight: 400;
     line-height: 1;
     margin: 0;
+
+    @include config.media('xl') {
+      font-size: 9em;
+    }
   }
 }
 
