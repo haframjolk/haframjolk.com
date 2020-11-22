@@ -1,7 +1,7 @@
 import babel from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
-import copy from 'rollup-plugin-copy';
+import copy from 'rollup-plugin-copy-watch';
 
 module.exports = {
   input: 'src/index.js',
@@ -28,10 +28,11 @@ module.exports = {
     resolve(),
     terser(),
     copy({
+      watch: ['src/index.html', 'src/assets'],
       targets: [
         { src: 'src/index.html', dest: 'dist' },
-        { src: ['src/assets/**/*'], dest: 'dist/assets' }
-      ]
-    })
+        { src: ['src/assets/**/*'], dest: 'dist/assets' },
+      ],
+    }),
   ],
 };
