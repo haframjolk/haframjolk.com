@@ -28,7 +28,7 @@ module.exports = {
     resolve(),
     terser(),
     copy({
-      watch: ['src/index.html', 'src/assets'],
+      watch: process.env.ROLLUP_WATCH ? ['src/index.html', 'src/assets'] : false,
       targets: [
         { src: 'src/index.html', dest: 'dist' },
         { src: ['src/assets/**/*'], dest: 'dist/assets' },
