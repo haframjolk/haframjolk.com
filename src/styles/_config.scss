@@ -1,0 +1,12 @@
+@use 'sass:map';
+
+$sizes: (
+  'md': 576px,
+  'lg': 768px,
+);
+
+@mixin media($size) {
+  @media (min-width: map.get($sizes, $size)) {
+    @content;
+  }
+}

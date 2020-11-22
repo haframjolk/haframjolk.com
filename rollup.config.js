@@ -1,11 +1,12 @@
 import babel from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
+import copy from 'rollup-plugin-copy';
 
 module.exports = {
-  input: './src/index.js',
+  input: 'src/index.js',
   output: {
-    file: './dist/bundle.js',
+    file: 'dist/bundle.js',
     format: 'iife',
     sourcemap: true,
   },
@@ -26,5 +27,11 @@ module.exports = {
     }),
     resolve(),
     terser(),
+    copy({
+      targets: [
+        { src: 'src/index.html', dest: 'dist' },
+        { src: ['src/assets/**/*'], dest: 'dist/assets' }
+      ]
+    })
   ],
 };
