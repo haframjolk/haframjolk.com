@@ -38,21 +38,44 @@
 }
 
 article {
-  padding: 1em;
+  padding: 3em;
 
   h2 {
     font-size: 3em;
     line-height: 1;
+    margin-top: 0;
   }
 }
 
 .main-footer {
   background-color: #2d2d2d;
   color: #fff;
-  padding: 1em;
   text-align: center;
 
+  h2 {
+    margin: 0;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid #3a3a3a;
+    margin: 0;
+  }
+
   .social {
-    margin: 0 auto;
+    margin: 1em auto;
+  }
+
+  &__upper,
+  &__lower {
+    padding: 1.5em;
+  }
+
+  &__lower {
+    color: #666;
+  }
+
+  a {
+    color: inherit;
   }
 }
