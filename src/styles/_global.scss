@@ -14,9 +14,13 @@ html {
 body {
   color: map.get(config.$colors, 'main');
   font-family: map.get(config.$fonts, 'main');
-  font-size: config.$font-size;
+  font-size: 16px;
   line-height: 2;
   margin: 0;
+
+  @include config.media('md') {
+    font-size: 18px;
+  }
 }
 
 a {
