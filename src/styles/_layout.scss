@@ -14,23 +14,22 @@
   background-size: cover;
   padding: 10em 0;
   position: relative;
-  z-index: 0;
   text-align: center;
+  z-index: 0;
 
   &::after {
     background-color: rgba(0, 0, 0, 0.2);
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
     bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
     z-index: -1;
   }
 
   h1 {
     color: #fff;
-
     font-size: 9em;
     margin: 0;
   }

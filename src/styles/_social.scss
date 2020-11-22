@@ -1,20 +1,20 @@
 .social {
+  align-items: center;
   display: flex;
+  justify-content: center;
   margin: 0;
   padding: 0;
-  justify-content: center;
-  align-items: center;
 
   &__icon {
-    width: 2.5em;
-    height: 2.5em;
-    list-style: none;
-    display: block;
-    margin-right: 1em;
     background-color: #999;
     border-radius: 5px;
-    position: relative;
     cursor: pointer;
+    display: block;
+    height: 2.5em;
+    list-style: none;
+    margin-right: 1em;
+    position: relative;
+    width: 2.5em;
   }
 
   &__icon:hover {
@@ -34,7 +34,8 @@
   }
 
   &__icon img {
-    width: 100%;
+    // Icons should be white
     filter: brightness(0) invert(1);
+    width: 100%;
   }
 }

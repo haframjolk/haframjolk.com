@@ -9,17 +9,17 @@ html {
 }
 
 body {
+  color: rgb(71, 71, 71);
   font-family: 'Open Sans', sans-serif;
-  margin: 0;
   font-size: 18px;
   line-height: 2;
-  color: rgb(71, 71, 71);
+  margin: 0;
 }
 
 a {
   color: #f2777a;
-  transition: color 0.2s ease;
   text-decoration: none;
+  transition: color 0.2s ease;
 
   &:hover {
     color: #9c9;
