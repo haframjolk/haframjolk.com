@@ -12,7 +12,7 @@
   background-image: url('assets/img/cover.jpg');
   background-position: center center;
   background-size: cover;
-  padding: 10em 0;
+  padding: 15em 0;
   position: relative;
   text-align: center;
   z-index: 0;
@@ -31,6 +31,8 @@
   h1 {
     color: #fff;
     font-size: 9em;
+    font-weight: 400;
+    line-height: 1;
     margin: 0;
   }
 }
