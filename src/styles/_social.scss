@@ -2,14 +2,23 @@
   display: flex;
   margin: 0;
   padding: 0;
+  justify-content: center;
+  align-items: center;
 
   &__icon {
-    width: 100%;
+    width: 2.5em;
+    height: 2.5em;
     list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
     margin-right: 1em;
+    background-color: #999;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__icon:hover {
+    background-color: #666;
   }
 
   &__icon:last-of-type {
@@ -17,11 +26,15 @@
   }
 
   &__icon a {
-    display: block;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 0.5em;
     width: 100%;
   }
 
   &__icon img {
     width: 100%;
+    filter: brightness(0) invert(1);
   }
 }

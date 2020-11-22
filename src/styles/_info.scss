@@ -1,9 +1,0 @@
-@use 'config';
-
-.info {
-  display: grid;
-
-  @include config.media('md') {
-    grid-template-columns: 1fr 4fr;
-  }
-}

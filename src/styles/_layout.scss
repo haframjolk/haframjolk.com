@@ -3,8 +3,55 @@
   max-width: 1280px;
 }
 
+.content {
+  margin: 0 auto;
+  max-width: 760px;
+}
+
+.main-header {
+  background-image: url('assets/img/cover.jpg');
+  background-position: center center;
+  background-size: cover;
+  padding: 10em 0;
+  position: relative;
+  z-index: 0;
+  text-align: center;
+
+  &::after {
+    background-color: rgba(0, 0, 0, 0.2);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  h1 {
+    color: #fff;
+
+    font-size: 9em;
+    margin: 0;
+  }
+}
+
+article {
+  padding: 1em;
+
+  h2 {
+    font-size: 3em;
+    line-height: 1;
+  }
+}
+
 .main-footer {
+  background-color: #2d2d2d;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+
   .social {
-    width: 10em;
+    margin: 0 auto;
   }
 }

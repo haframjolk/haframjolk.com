@@ -10,7 +10,7 @@
     "build:sass": "sass -s compressed src/styles/index.scss dist/styles.css",
     "build:rollup": "rollup -c",
     "build": "concurrently npm:build:*",
-    "start:browser-sync": "browser-sync start --server --files '**/*.html' dist/bundle.js dist/styles.css",
+    "start:browser-sync": "browser-sync start --config bs-config.js",
     "start:rollup": "rollup -cw",
     "start:sass": "sass -s compressed --watch src/styles/index.scss dist/styles.css",
     "start": "concurrently npm:start:*",
