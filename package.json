@@ -1,0 +1,52 @@
+{
+  "name": "haframjolk.com",
+  "version": "1.0.0",
+  "description": "haframjolk.com website",
+  "main": "index.js",
+  "scripts": {
+    "test:eslint": "eslint './src/**/*.js' --fix",
+    "test:stylelint": "stylelint './src/styles/**/*.scss' --syntax scss",
+    "test": "concurrently npm:test:*",
+    "build:sass": "sass ./src/styles/index.scss ./dist/styles.css",
+    "build:rollup": "rollup -c",
+    "build": "concurrently npm:build:*",
+    "start:browser-sync": "browser-sync start --server --files '**/*.html' ./dist/bundle.js ./dist/styles.css",
+    "start:rollup": "rollup -cw",
+    "start:sass": "sass --watch ./src/styles/index.scss ./dist/styles.css",
+    "start": "concurrently npm:start:*",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haframjolk/haframjolk.com.git"
+  },
+  "author": "haframjolk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haframjolk/haframjolk.com/issues"
+  },
+  "homepage": "https://github.com/haframjolk/haframjolk.com#readme",
+  "dependencies": {
+    "konami-code": "^0.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.7",
+    "@babel/preset-env": "^7.12.7",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "browser-sync": "^2.26.13",
+    "concurrently": "^5.3.0",
+    "eslint": "^7.14.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "gh-pages": "^3.1.0",
+    "htmlhint": "^0.14.2",
+    "rollup": "^2.33.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "sass": "^1.29.0",
+    "stylelint": "^13.8.0",
+    "stylelint-config-sass-guidelines": "^7.1.0",
+    "stylelint-config-standard": "^20.0.0",
+    "terser": "^5.5.0"
+  }
+}
