@@ -32,6 +32,7 @@
     box-shadow: 0 0 8px map.get(config.$colors, 'overlay');
     font-family: map.get(config.$fonts, 'heading');
     max-width: 100%;
+    overflow: hidden;
     padding: 1em;
     width: 30em;
   }
@@ -62,7 +63,17 @@
 
     background-color: darken(map.get(config.$colors, 'button'), 25%);
     border: 0;
-    margin-top: 1em;
     padding: 0.5em;
+  }
+
+  // Add another overlay when submitting form
+  &__form--loading::after {
+    background-color: map.get(config.$colors, 'overlay');
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }

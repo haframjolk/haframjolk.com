@@ -27,12 +27,15 @@
   },
   "homepage": "https://github.com/haframjolk/haframjolk.com#readme",
   "dependencies": {
-    "konami-code": "^0.3.0"
+    "konami-code": "^0.3.0",
+    "spin": "^0.0.1",
+    "sweetalert2": "^10.10.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.7",
     "@babel/preset-env": "^7.12.7",
     "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-commonjs": "^16.0.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
     "browser-sync": "^2.26.13",
     "concurrently": "^5.3.0",

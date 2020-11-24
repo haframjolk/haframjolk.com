@@ -51,7 +51,7 @@ $colors: (
   border-radius: 5px;
   color: $color;
   cursor: pointer;
-  display: block;
+  display: inline-block;
 
   &:hover {
     background-color: darken($bg, 20%);

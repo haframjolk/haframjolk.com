@@ -1,5 +1,6 @@
 import babel from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 import copy from 'rollup-plugin-copy-watch';
 
@@ -26,6 +27,7 @@ module.exports = {
       ],
     }),
     resolve(),
+    commonjs(),
     terser(),
     copy({
       watch: process.env.ROLLUP_WATCH ? ['src/index.html', 'src/assets'] : false,
