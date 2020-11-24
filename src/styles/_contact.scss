@@ -1,8 +1,8 @@
 @use 'sass:map';
 @use 'config';
 
-body {
-  .modal-open {
+.body {
+  &--modal-open {
     overflow: hidden;
   }
 }

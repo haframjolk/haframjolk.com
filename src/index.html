@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Righteous&family=Varela+Round&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="body">
   <header class="main-header">
     <h1>Reyn Alpha</h1>
   </header>
@@ -45,19 +45,24 @@
       <h2>Social</h2>
       <ul class="social">
         <li class="social__icon">
-          <a href="https://twitter.com/haframjolk" target="_blank" title="Twitter">
+          <a class="social__icon__wrapper" href="https://twitter.com/haframjolk" target="_blank" title="Twitter">
             <img src="assets/img/icons/twitter.svg" alt="Twitter">
           </a>
         </li>
         <li class="social__icon">
-          <a href="https://github.com/haframjolk" target="_blank" title="GitHub">
+          <a class="social__icon__wrapper" href="https://github.com/haframjolk" target="_blank" title="GitHub">
             <img src="assets/img/icons/github.svg" alt="GitHub">
           </a>
         </li>
         <li class="social__icon">
-          <a href="https://youtube.com/user/mbson" target="_blank" title="YouTube">
+          <a class="social__icon__wrapper" href="https://youtube.com/user/mbson" target="_blank" title="YouTube">
             <img src="assets/img/icons/youtube.svg" alt="YouTube">
           </a>
+        </li>
+        <li class="social__icon" role="button" id="contact-button">
+          <div class="social__icon__wrapper">
+            <img src="assets/img/icons/email.svg" alt="Contact">
+          </div>
         </li>
       </ul>
       <a class="main-footer__email" href="mailto:contact@haframjolk.com">contact@haframjolk.com</a>
@@ -67,7 +72,7 @@
       <small class="main-footer__copy">&copy; 2020 Reyn Alpha</small>
     </div>
   </footer>
-  <dialog class="dialog dialog--contact" open>
+  <dialog class="dialog dialog--contact">
     <form class="dialog--contact__form" action="https://formspree.io/f/meqplqoe" method="POST">
       <h2>Contact</h2>
       <label>
