@@ -31,10 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.classList.add('dialog--contact__form--loading');
 
     // Submit form
-    const formData = new FormData(contactForm);
     let response;
     try {
-      response = await submitForm(formData);
+      response = await submitForm(contactForm);
     } catch (err) {
       Swal.fire({
         title: 'Error',

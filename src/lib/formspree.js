@@ -1,12 +1,12 @@
-const POST_URL = 'https://formspree.io/f/meqplqoe';
-
 /**
  * Submits a form to Formspree
  *
- * @param {FormData} formData Form data to submit
+ * @param {HTMLFormElement} form Form data to submit
  */
-export default async function submitForm(formData) {
-  return fetch(POST_URL, {
+export default async function submitForm(form) {
+  const formData = new FormData(form);
+
+  return fetch(form.action, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
