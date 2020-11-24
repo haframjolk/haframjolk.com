@@ -31,6 +31,7 @@
     border-radius: 0.5em;
     box-shadow: 0 0 8px map.get(config.$colors, 'overlay');
     font-family: map.get(config.$fonts, 'heading');
+    margin: 1em;
     max-width: 100%;
     overflow: hidden;
     padding: 1em;
