@@ -32,6 +32,4 @@ npm run build
 
 ### Deploying
 
-```sh
-npm run deploy
-```
+The website is automatically deployed to GitHub Pages using GitHub Actions when code is pushed to the `main` branch.
