@@ -27,7 +27,7 @@ $colors: (
   'overlay': rgba(0, 0, 0, 0.2),
   'footer': #fff,
   'footer-lower': #666,
-  'social-icon-bg': #999,
+  'button': #999,
 );
 
 @mixin overlay($opacity) {
@@ -43,5 +43,17 @@ $colors: (
 @mixin media($size) {
   @media (min-width: map.get($sizes, $size)) {
     @content;
+  }
+}
+
+@mixin button($bg, $color) {
+  background-color: $bg;
+  border-radius: 5px;
+  color: $color;
+  cursor: pointer;
+  display: block;
+
+  &:hover {
+    background-color: darken($bg, 20%);
   }
 }

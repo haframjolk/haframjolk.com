@@ -9,19 +9,13 @@
   padding: 0;
 
   &__icon {
-    background-color: map.get(config.$colors, 'social-icon-bg');
-    border-radius: 5px;
-    cursor: pointer;
-    display: block;
+    @include config.button(map.get(config.$colors, 'button'), #fff);
+
     height: 2.5em;
     list-style: none;
     margin-right: 1em;
     position: relative;
     width: 2.5em;
-  }
-
-  &__icon:hover {
-    background-color: darken(map.get(config.$colors, 'social-icon-bg'), 20%);
   }
 
   &__icon:last-of-type {

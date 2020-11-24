@@ -67,6 +67,21 @@
       <small class="main-footer__copy">&copy; 2020 Reyn Alpha</small>
     </div>
   </footer>
+  <dialog class="dialog dialog--contact" open>
+    <form class="dialog--contact__form" action="https://formspree.io/f/meqplqoe" method="POST">
+      <h2>Contact</h2>
+      <label>
+        Your email:
+        <input type="email" name="_replyto" placeholder="email@example.org" required>
+      </label>
+      <label>
+        Your message:
+        <textarea name="message" required></textarea>
+      </label>
+
+      <button type="submit">Send</button>
+    </form>
+  </dialog>
   <script src="bundle.js"></script>
 </body>
 </html>
