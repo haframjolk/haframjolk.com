@@ -14,17 +14,23 @@ npm install
 
 ### Developing
 
+Watches and automatically rebuilds code when changed and keeps browsers in sync.
+
 ```sh
 npm start
 ```
 
 ### Testing
 
+Tests check for style and code errors in SCSS and JavaScript files, using ESLint and Stylelint.
+
 ```sh
-npm test
+npm test -s
 ```
 
 ### Building
+
+Builds the website into the `dist` directory.
 
 ```sh
 npm run build
