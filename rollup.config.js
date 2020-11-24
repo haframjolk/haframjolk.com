@@ -33,7 +33,7 @@ module.exports = {
       watch: process.env.ROLLUP_WATCH ? ['src/index.html', 'src/assets'] : false,
       targets: [
         { src: 'src/index.html', dest: 'dist' },
-        { src: ['src/assets/**/*'], dest: 'dist/assets' },
+        { src: ['static/*'], dest: 'dist' },
       ],
     }),
   ],
