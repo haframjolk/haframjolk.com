@@ -1,5 +1,5 @@
 /**
- * Submits a form to Formspree
+ * Submits a form to a service
  *
  * @param {HTMLFormElement} form Form data to submit
  */
@@ -11,6 +11,6 @@ export default async function submitForm(form) {
     headers: {
       Accept: 'application/json',
     },
-    body: JSON.stringify(Object.fromEntries(formData)),
+    body: JSON.stringify(Object.fromEntries(formData.entries())),
   });
 }

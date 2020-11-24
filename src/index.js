@@ -1,7 +1,7 @@
 import KonamiCode from 'konami-code';
 import Spinner from 'spin';
 import Swal from 'sweetalert2/dist/sweetalert2.all';
-import submitForm from './lib/formspree';
+import submitForm from './lib/forms';
 import spawnKickAss from './lib/kickass';
 import Modal from './lib/modal';
 
