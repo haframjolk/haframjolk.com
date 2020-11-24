@@ -34,8 +34,12 @@
     margin: 1em;
     max-width: 100%;
     overflow: hidden;
-    padding: 1em;
+    padding: 2em;
     width: 30em;
+  }
+
+  &__form h2 {
+    margin-top: 0;
   }
 
   &__form label {
