@@ -12,6 +12,8 @@ html {
 }
 
 body {
+  @include config.dark-mode;
+
   color: map.get(config.$colors, 'main');
   font-family: map.get(config.$fonts, 'main');
   font-size: 16px;
@@ -50,4 +52,13 @@ h5,
 h6 {
   font-family: map.get(config.$fonts, 'heading');
   font-weight: map.get(config.$font-weight, 'heading');
+}
+
+// Implement dark theme for Swal2
+.swal2-container .swal2-popup {
+  @include config.dark-mode;
+
+  * {
+    color: inherit;
+  }
 }

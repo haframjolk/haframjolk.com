@@ -28,6 +28,8 @@
 
 .dialog--contact {
   &__form {
+    @include config.dark-mode;
+
     background-color: #fff;
     border-radius: 0.5em;
     box-shadow: 0 0 8px map.get(config.$colors, 'overlay');

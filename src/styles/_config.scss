@@ -28,6 +28,8 @@ $colors: (
   'footer': #fff,
   'footer-lower': #666,
   'button': #999,
+  'main-dark': #fff,
+  'bg-dark': #222,
 );
 
 @mixin overlay($opacity) {
@@ -55,5 +57,13 @@ $colors: (
 
   &:hover {
     background-color: darken($bg, 20%);
+  }
+}
+
+// Changes the background and text colors for dark mode automatically
+@mixin dark-mode() {
+  @media (prefers-color-scheme: dark) {
+    background-color: map.get($colors, 'bg-dark');
+    color: map.get($colors, 'main-dark');
   }
 }
