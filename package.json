@@ -7,12 +7,12 @@
     "test:eslint": "eslint 'src/**/*.js' --fix",
     "test:stylelint": "stylelint 'src/styles/**/*.scss' --syntax scss",
     "test": "concurrently npm:test:*",
-    "build:sass": "sass -s compressed --load-path=node_modules/normalize.css src/styles/index.scss dist/styles.css",
+    "build:sass": "sass -s compressed src/styles/index.scss dist/styles.css",
     "build:rollup": "rollup -c",
     "build": "concurrently npm:build:*",
     "start:browser-sync": "browser-sync start --config bs-config.js",
     "start:rollup": "rollup -cw",
-    "start:sass": "sass -s compressed --load-path=node_modules/normalize.css --watch src/styles/index.scss dist/styles.css",
+    "start:sass": "sass -s compressed --watch src/styles/index.scss dist/styles.css",
     "start": "concurrently npm:start:*"
   },
   "repository": {
