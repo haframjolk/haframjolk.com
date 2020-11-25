@@ -1,6 +1,6 @@
 # haframjolk.com
 
-This repository contains the code for my website, [haframjolk.com](https://haframjolk.com).
+This repository contains the code for my website, [haframjolk.com](https://www.haframjolk.com).
 
 ## Usage
 
