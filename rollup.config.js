@@ -30,7 +30,7 @@ module.exports = {
     commonjs(),
     terser(),
     copy({
-      watch: process.env.ROLLUP_WATCH ? ['src/index.html', 'src/assets'] : false,
+      watch: process.env.ROLLUP_WATCH ? ['src/index.html', 'static'] : false,
       targets: [
         { src: 'src/index.html', dest: 'dist' },
         { src: ['static/*'], dest: 'dist' },
