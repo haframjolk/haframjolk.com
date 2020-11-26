@@ -53,12 +53,3 @@ h6 {
   font-family: map.get(config.$fonts, 'heading');
   font-weight: map.get(config.$font-weight, 'heading');
 }
-
-// Implement dark theme for Swal2
-.swal2-container .swal2-popup {
-  @include config.dark-mode;
-
-  * {
-    color: inherit;
-  }
-}
