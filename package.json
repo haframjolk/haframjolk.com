@@ -26,9 +26,7 @@
   },
   "homepage": "https://github.com/haframjolk/haframjolk.com#readme",
   "dependencies": {
-    "konami-code": "^0.3.0",
-    "spin": "^0.0.1",
-    "sweetalert2": "^10.10.1"
+    "konami-code": "^0.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.7",
