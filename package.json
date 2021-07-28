@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/haframjolk/haframjolk.com#readme",
   "dependencies": {
-    "konami-code": "^0.3.0"
+    "konami": "^1.6.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.7",

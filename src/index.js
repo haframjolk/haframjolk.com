@@ -1,11 +1,10 @@
-import KonamiCode from 'konami-code';
+import Konami from 'konami';
 import spawnKickAss from './lib/kickass';
 import Modal from './lib/modal';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Spawn Kick Ass if Konami code is entered
-  const konami = new KonamiCode();
-  konami.listen(spawnKickAss);
+  Konami(spawnKickAss);
 
   // Activate contact form modal
   const contactModal = new Modal(document.querySelector('.dialog--contact'));
