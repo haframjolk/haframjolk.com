@@ -12,19 +12,11 @@
 }
 
 .main-header {
-  background-image: config.$header-image;
-  background-position: center;
-  background-size: cover;
+  background: config.$header-gradient;
   padding: 15em 0;
   position: relative;
   text-align: center;
   z-index: 0;
-
-  &::after {
-    @include config.overlay(0.2);
-
-    z-index: -1;
-  }
 
   h1 {
     font-size: 4em;
