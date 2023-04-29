@@ -32,7 +32,7 @@ $colors: (
   ),
 );
 
-$header-gradient: linear-gradient(135deg,#5BCEFA 0%,#FFF 50%,#F5A9B8 100%);
+$header-gradient: linear-gradient(135deg, #5bcefa 0%, #fff 50%, #f5a9b8 100%);
 
 @mixin overlay($opacity) {
   background-color: rgba(0, 0, 0, $opacity);
