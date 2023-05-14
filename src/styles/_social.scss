@@ -9,8 +9,7 @@
   padding: 0;
 
   &__icon {
-    @include config.button(map.get(config.$colors, 'button'), #fff);
-
+    cursor: pointer;
     height: 2.5em;
     list-style: none;
     margin-right: 1em;
@@ -31,8 +30,13 @@
   }
 
   &__icon img {
-    // Icons should be white
-    filter: brightness(0) invert(1);
+    // Icons should be same purple color as heading
+    filter: brightness(0) saturate(100%) invert(19%) sepia(99%) saturate(2137%) hue-rotate(290deg) brightness(92%) contrast(91%);
     width: 100%;
+  }
+
+  &__icon:hover img {
+    // Darken on hover
+    filter: brightness(0) saturate(100%) invert(19%) sepia(99%) saturate(2137%) hue-rotate(290deg) brightness(92%) contrast(91%) brightness(60%);
   }
 }

@@ -44,12 +44,3 @@ h1 {
 p {
   margin-bottom: 1.5em;
 }
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: map.get(config.$fonts, 'heading');
-  font-weight: map.get(config.$font-weight, 'heading');
-}

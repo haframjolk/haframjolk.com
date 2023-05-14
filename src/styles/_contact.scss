@@ -1,14 +1,9 @@
 @use 'sass:map';
 @use 'config';
 
-.body {
-  &--modal-open {
-    overflow: hidden;
-  }
-}
-
 .dialog {
   align-items: center;
+  backdrop-filter: blur(2px);
   background-color: map.get(config.$colors, 'overlay');
   border: 0;
   color: #000;
