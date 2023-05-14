@@ -3,17 +3,16 @@
     "short_name": "Reyn Alpha",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png?v=694q5Op5jq",
+            "src": "/android-chrome-192x192.png?v=2",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-512x512.png?v=694q5Op5jq",
+            "src": "/android-chrome-512x512.png?v=2",
             "sizes": "512x512",
             "type": "image/png"
         }
     ],
-    "theme_color": "#3e8dab",
-    "background_color": "#3e8dab",
-    "display": "standalone"
+    "theme_color": "#ac2798",
+    "background_color": "#ac2798"
 }
