@@ -12,8 +12,7 @@ html {
 }
 
 body {
-  @include config.dark-mode;
-
+  background: config.$bg-gradient;
   color: map.get(config.$colors, 'main');
   font-family: map.get(config.$fonts, 'main');
   font-size: 16px;
@@ -22,6 +21,13 @@ body {
 
   @include config.media('md') {
     font-size: 18px;
+  }
+
+  @include config.dark-mode() {
+    $dark: map.get(config.$colors, 'dark');
+
+    background: config.$dark-bg-gradient;
+    color: map.get($dark, 'main');
   }
 }
 
@@ -39,8 +45,15 @@ h1 {
   color: map.get(config.$colors, 'h1');
   font-family: map.get(config.$fonts, 'h1');
   font-weight: map.get(config.$font-weight, 'h1');
+
+  @include config.dark-mode() {
+    $dark: map.get(config.$colors, 'dark');
+
+    color: map.get($dark, 'main');
+  }
 }
 
 p {
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }

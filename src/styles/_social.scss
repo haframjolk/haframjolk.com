@@ -33,10 +33,19 @@
     // Icons should be same purple color as heading
     filter: brightness(0) saturate(100%) invert(19%) sepia(99%) saturate(2137%) hue-rotate(290deg) brightness(92%) contrast(91%);
     width: 100%;
+
+    @include config.dark-mode() {
+      // Or white in dark mode
+      filter: brightness(0) saturate(100%) invert(1);
+    }
   }
 
   &__icon:hover img {
     // Darken on hover
     filter: brightness(0) saturate(100%) invert(19%) sepia(99%) saturate(2137%) hue-rotate(290deg) brightness(92%) contrast(91%) brightness(60%);
+
+    @include config.dark-mode() {
+      filter: brightness(0) saturate(100%) invert(1) brightness(60%);
+    }
   }
 }

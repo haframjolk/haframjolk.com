@@ -22,8 +22,6 @@
 
 .dialog--contact {
   &__form {
-    @include config.dark-mode;
-
     background-color: #fff;
     border-radius: 0.5em;
     box-shadow: 0 0 8px map.get(config.$colors, 'overlay');
@@ -33,6 +31,13 @@
     overflow: hidden;
     padding: 2em;
     width: 30em;
+
+    @include config.dark-mode() {
+      $dark: map.get(config.$colors, 'dark');
+
+      background-color: map.get($dark, 'bg');
+      color: map.get($dark, 'main');
+    }
   }
 
   &__form h2 {

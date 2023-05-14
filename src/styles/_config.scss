@@ -28,20 +28,29 @@ $colors: (
   'dark': (
     'main': #fff,
     'bg': #222,
+    'trans': (
+      'blue': darken(#5bcefa, 25%),
+      'white': darken(#fff, 25%),
+      'pink': darken(#f5a9b8, 25%),
+    ),
+  ),
+  'trans': (
+    'blue': #5bcefa,
+    'white': #fff,
+    'pink': #f5a9b8,
   ),
 );
 
-$header-gradient: linear-gradient(135deg, #5bcefa 0%, #fff 50%, #f5a9b8 100%);
-
-@mixin overlay($opacity) {
-  background-color: rgba(0, 0, 0, $opacity);
-  bottom: 0;
-  content: '';
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
+// Returns a linear-gradient with the specified colors
+@function background-gradient($color1, $color2, $color3) {
+  @return linear-gradient(135deg, $color1 0%, $color2 50%, $color3 100%);
 }
+
+// Create background gradients
+$trans: map.get($colors, 'trans');
+$dark-trans: map.get(map.get($colors, 'dark'), 'trans');
+$bg-gradient: background-gradient(map.get($trans, 'blue'), map.get($trans, 'white'), map.get($trans, 'pink'));
+$dark-bg-gradient: background-gradient(map.get($dark-trans, 'blue'), map.get($dark-trans, 'white'), map.get($dark-trans, 'pink'));
 
 @mixin media($size) {
   @media (min-width: map.get($sizes, $size)) {
@@ -61,13 +70,9 @@ $header-gradient: linear-gradient(135deg, #5bcefa 0%, #fff 50%, #f5a9b8 100%);
   }
 }
 
-// Changes the background and text colors for dark mode automatically
+// Use to implement dark mode styles
 @mixin dark-mode() {
   @media (prefers-color-scheme: dark) {
-    // Dark colors map
-    $dark: map.get($colors, 'dark');
-
-    background-color: map.get($dark, 'bg');
-    color: map.get($dark, 'main');
+    @content;
   }
 }
