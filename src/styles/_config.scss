@@ -7,9 +7,8 @@ $sizes: (
 );
 
 $fonts: (
-  'main': ('Open Sans', sans-serif),
+  'main': ('IBM Plex Mono', monospace),
   'h1': ('Righteous', cursive),
-  'heading': ('Varela Round', sans-serif),
 );
 
 $font-weight: (
@@ -18,7 +17,7 @@ $font-weight: (
 );
 
 $colors: (
-  'h1': #9f7d9a,
+  'h1': #ac2798,
   'main': #474747,
   'link': #f2777a,
   'link-hover': #9c9,
@@ -58,7 +57,7 @@ $header-gradient: linear-gradient(135deg, #5bcefa 0%, #fff 50%, #f5a9b8 100%);
   display: inline-block;
 
   &:hover {
-    background-color: darken($bg, 20%);
+    background-color: darken($bg, 5%);
   }
 }
 
