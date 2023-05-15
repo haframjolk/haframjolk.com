@@ -24,7 +24,7 @@ export default class Modal {
    * Opens the modal
    */
   open() {
-    this.element.setAttribute('open', '');
+    this.element.showModal();
     document.body.classList.add('body--modal-open');
   }
 
@@ -32,7 +32,7 @@ export default class Modal {
    * Closes the modal
    */
   close() {
-    this.element.removeAttribute('open');
+    this.element.close();
     document.body.classList.remove('body--modal-open');
   }
 }
