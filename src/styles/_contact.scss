@@ -18,8 +18,8 @@ $dark: map.get($colors, 'dark');
   box-shadow: 0 0 8px map.get($colors, 'overlay');
   color: inherit;
   font-family: map.get(config.$fonts, 'heading');
-  height: 90%;
-  max-height: fit-content;
+  height: fit-content;
+  max-height: 90%;
   padding: 0;
 
   @include config.dark-mode() {
