@@ -1,6 +1,9 @@
 @use 'sass:map';
 @use 'config';
 
+$colors: config.$colors;
+$dark: map.get($colors, 'dark');
+
 html {
   box-sizing: border-box;
 }
@@ -13,7 +16,7 @@ html {
 
 body {
   background: config.$bg-gradient;
-  color: map.get(config.$colors, 'main');
+  color: map.get($colors, 'main');
   font-family: map.get(config.$fonts, 'main');
   font-size: 16px;
   line-height: 2;
@@ -24,32 +27,22 @@ body {
   }
 
   @include config.dark-mode() {
-    $dark: map.get(config.$colors, 'dark');
-
     background: config.$dark-bg-gradient;
     color: map.get($dark, 'main');
   }
 }
 
 a {
-  color: map.get(config.$colors, 'link');
   text-decoration: none;
-  transition: color 0.2s ease;
-
-  &:hover {
-    color: map.get(config.$colors, 'link-hover');
-  }
 }
 
 h1 {
-  color: map.get(config.$colors, 'h1');
+  color: map.get($colors, 'accent');
   font-family: map.get(config.$fonts, 'h1');
   font-weight: map.get(config.$font-weight, 'h1');
 
   @include config.dark-mode() {
-    $dark: map.get(config.$colors, 'dark');
-
-    color: map.get($dark, 'h1');
+    color: map.get($dark, 'accent');
   }
 }
 

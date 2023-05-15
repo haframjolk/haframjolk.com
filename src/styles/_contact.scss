@@ -1,10 +1,14 @@
 @use 'sass:map';
+@use 'sass:color';
 @use 'config';
+
+$colors: config.$colors;
+$dark: map.get($colors, 'dark');
 
 .dialog {
   align-items: center;
   backdrop-filter: blur(2px);
-  background-color: map.get(config.$colors, 'overlay');
+  background-color: map.get($colors, 'overlay');
   border: 0;
   color: #000;
   display: flex;
@@ -24,7 +28,7 @@
   &__form {
     background-color: #fff;
     border-radius: 0.5em;
-    box-shadow: 0 0 8px map.get(config.$colors, 'overlay');
+    box-shadow: 0 0 8px map.get($colors, 'overlay');
     font-family: map.get(config.$fonts, 'heading');
     margin: 1em;
     max-width: 100%;
@@ -33,8 +37,6 @@
     width: 30em;
 
     @include config.dark-mode() {
-      $dark: map.get(config.$colors, 'dark');
-
       background-color: map.get($dark, 'bg');
       color: map.get($dark, 'main');
     }
@@ -51,7 +53,7 @@
 
   &__form textarea,
   &__form input {
-    border: 1px solid map.get(config.$colors, 'main');
+    border: 1px solid map.get($colors, 'main');
     border-radius: 0.5em;
     display: block;
     max-width: 100%;
@@ -68,14 +70,14 @@
   &__form button {
     @include config.button(#666, #fff);
 
-    background-color: darken(map.get(config.$colors, 'button'), 25%);
+    background-color: color.scale(map.get($colors, 'button'), $lightness: -25%);
     border: 0;
     padding: 0.5em;
   }
 
   // Add another overlay when submitting form
   &__form--loading::after {
-    background-color: map.get(config.$colors, 'overlay');
+    background-color: map.get($colors, 'overlay');
     bottom: 0;
     content: '';
     left: 0;

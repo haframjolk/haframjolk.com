@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use 'sass:color';
 
 $sizes: (
   'md': 576px,
@@ -17,22 +18,18 @@ $font-weight: (
 );
 
 $colors: (
-  'h1': #ac2798,
   'main': #474747,
-  'link': #f2777a,
-  'link-hover': #9c9,
+  'accent': #ac2798,
   'overlay': rgba(0, 0, 0, 0.2),
-  'footer': #fff,
-  'footer-lower': #666,
   'button': #999,
   'dark': (
-    'h1': #fff,
+    'accent': #fff,
     'main': #fff,
     'bg': #222,
     'trans': (
-      'blue': darken(#5bcefa, 25%),
-      'white': darken(#fff, 25%),
-      'pink': darken(#f5a9b8, 25%),
+      'blue': color.scale(#5bcefa, $lightness: -25%),
+      'white': color.scale(#fff, $lightness: -25%),
+      'pink': color.scale(#f5a9b8, $lightness: -25%),
     ),
   ),
   'trans': (
@@ -47,14 +44,23 @@ $colors: (
   @return linear-gradient(135deg, $color1 0%, $color2 50%, $color3 100%);
 }
 
-// Create background gradients
+// Get trans color maps
 $trans: map.get($colors, 'trans');
 $dark-trans: map.get(map.get($colors, 'dark'), 'trans');
+
+// Create background gradients
 $bg-gradient: background-gradient(map.get($trans, 'blue'), map.get($trans, 'white'), map.get($trans, 'pink'));
 $dark-bg-gradient: background-gradient(map.get($dark-trans, 'blue'), map.get($dark-trans, 'white'), map.get($dark-trans, 'pink'));
 
 @mixin media($size) {
   @media (min-width: map.get($sizes, $size)) {
+    @content;
+  }
+}
+
+// Use to implement dark mode styles
+@mixin dark-mode() {
+  @media (prefers-color-scheme: dark) {
     @content;
   }
 }
@@ -67,13 +73,6 @@ $dark-bg-gradient: background-gradient(map.get($dark-trans, 'blue'), map.get($da
   display: inline-block;
 
   &:hover {
-    background-color: darken($bg, 5%);
-  }
-}
-
-// Use to implement dark mode styles
-@mixin dark-mode() {
-  @media (prefers-color-scheme: dark) {
-    @content;
+    background-color: color.scale($bg, $lightness: -5%);
   }
 }
