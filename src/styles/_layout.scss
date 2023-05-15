@@ -25,12 +25,12 @@ body {
   text-align: center;
   width: 36em;
 
-  article {
-    text-transform: lowercase;
-  }
-
   @include config.dark-mode() {
     background-color: rgba(10, 10, 10, 0.5);
+  }
+
+  article {
+    text-transform: lowercase;
   }
 }
 
