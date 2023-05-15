@@ -5,41 +5,43 @@
 $colors: config.$colors;
 $dark: map.get($colors, 'dark');
 
+.body {
+  &--modal-open {
+    overflow: hidden;
+  }
+}
+
 .dialog {
-  align-items: center;
-  backdrop-filter: blur(2px);
-  background-color: map.get($colors, 'overlay');
+  background-color: #fff;
+  border-radius: 0.5em;
+  box-shadow: 0 0 8px map.get($colors, 'overlay');
   border: 0;
-  color: #000;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
+  color: inherit;
+  font-family: map.get(config.$fonts, 'heading');
+  height: 90%;
+  max-height: fit-content;
+  padding: 0;
+
+  &::backdrop {
+    background-color: map.get($colors, 'overlay');
+    backdrop-filter: blur(2px);
+  }
 
   &:not([open]) {
     display: none;
+  }
+
+  @include config.dark-mode() {
+    background-color: map.get($dark, 'bg');
+    color: map.get($dark, 'main');
   }
 }
 
 .dialog--contact {
   &__form {
-    background-color: #fff;
-    border-radius: 0.5em;
-    box-shadow: 0 0 8px map.get($colors, 'overlay');
-    font-family: map.get(config.$fonts, 'heading');
-    margin: 1em;
     max-width: 100%;
-    overflow: hidden;
     padding: 2em;
     width: 30em;
-
-    @include config.dark-mode() {
-      background-color: map.get($dark, 'bg');
-      color: map.get($dark, 'main');
-    }
   }
 
   &__form h2 {
@@ -68,9 +70,8 @@ $dark: map.get($colors, 'dark');
   }
 
   &__form button {
-    @include config.button(#666, #fff);
+    @include config.button(color.scale(map.get($colors, 'button'), $lightness: -25%), #fff);
 
-    background-color: color.scale(map.get($colors, 'button'), $lightness: -25%);
     border: 0;
     padding: 0.5em;
   }
