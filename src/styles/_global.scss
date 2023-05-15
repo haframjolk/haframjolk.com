@@ -49,7 +49,7 @@ h1 {
   @include config.dark-mode() {
     $dark: map.get(config.$colors, 'dark');
 
-    color: map.get($dark, 'main');
+    color: map.get($dark, 'h1');
   }
 }
 
