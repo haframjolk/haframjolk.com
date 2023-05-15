@@ -13,27 +13,27 @@ $dark: map.get($colors, 'dark');
 
 .dialog {
   background-color: #fff;
+  border: 0;
   border-radius: 0.5em;
   box-shadow: 0 0 8px map.get($colors, 'overlay');
-  border: 0;
   color: inherit;
   font-family: map.get(config.$fonts, 'heading');
   height: 90%;
   max-height: fit-content;
   padding: 0;
 
+  @include config.dark-mode() {
+    background-color: map.get($dark, 'bg');
+    color: map.get($dark, 'main');
+  }
+
   &::backdrop {
-    background-color: map.get($colors, 'overlay');
     backdrop-filter: blur(2px);
+    background-color: map.get($colors, 'overlay');
   }
 
   &:not([open]) {
     display: none;
-  }
-
-  @include config.dark-mode() {
-    background-color: map.get($dark, 'bg');
-    color: map.get($dark, 'main');
   }
 }
 
