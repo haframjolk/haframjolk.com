@@ -1,5 +1,9 @@
 @use 'sass:map';
+@use 'sass:color';
 @use 'config';
+
+$colors: config.$colors;
+$dark: map.get($colors, 'dark');
 
 .social {
   align-items: center;
@@ -29,23 +33,26 @@
     width: 100%;
   }
 
-  &__icon img {
-    // Icons should be same purple color as heading
-    filter: brightness(0) saturate(100%) invert(19%) sepia(99%) saturate(2137%) hue-rotate(290deg) brightness(92%) contrast(91%);
+  &__icon svg {
+    height: 100%;
     width: 100%;
+  }
+
+  // Set icon fill color
+  &__path {
+    fill: map.get($colors, 'accent');
 
     @include config.dark-mode() {
-      // Or white in dark mode
-      filter: brightness(0) saturate(100%) invert(1);
+      fill: map.get($dark, 'accent');
     }
   }
 
-  &__icon:hover img {
-    // Darken on hover
-    filter: brightness(0) saturate(100%) invert(19%) sepia(99%) saturate(2137%) hue-rotate(290deg) brightness(92%) contrast(91%) brightness(60%);
+  // Darken icon fill color on hover
+  &__icon:hover &__path {
+    fill: color.scale(map.get($colors, 'accent'), $lightness: -40%);
 
     @include config.dark-mode() {
-      filter: brightness(0) saturate(100%) invert(1) brightness(60%);
+      fill: color.scale(map.get($dark, 'accent'), $lightness: -40%);
     }
   }
 }
